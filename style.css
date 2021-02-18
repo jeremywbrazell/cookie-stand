@@ -22,5 +22,40 @@ table {
   }
 
   h1 {
-    color: #004912;
+    color: #006605;
+    text-align: center;
+    font-size: 110px;
+  }
+
+  body {
+    background-color:#9fd4ff;
+
+  }
+
+  p {
+    color:#ffffff;
+    font-family:futura;
+    text-weight: bold;
+  }
+
+  p a {
+    color:#f2f2f2;
+  }
+
+  img {
+    float: left;
+  }
+
+  h4 {
+color:rgb(84, 81, 102);
+
+  }
+
+ 
+  a:visited {
+    color:black;
+  }
+
+  a:hover {
+    color:blue;
   }
