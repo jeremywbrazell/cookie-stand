@@ -27,8 +27,8 @@ table {
     font-size: 110px;
   }
 
-  body {
-    background-color:#9fd4ff;
+  /* body {
+    background-color:#9fd4ff; */
 
   }
 
@@ -58,4 +58,12 @@ color:rgb(84, 81, 102);
 
   a:hover {
     color:blue;
+  }
+
+  .form {
+    display: flex;
+  }
+
+  #new-store-form {
+    padding: 100px;
   }

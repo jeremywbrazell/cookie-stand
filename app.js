@@ -24,13 +24,13 @@ function randomInRange(min, max) {
     return Math.floor(Math.random() * (range + 1)) + min;
   }
 
-  function CookieStand(id, location, minCustomersPerHour, maxCustomersPerHour, avgCookiesPerSale, cookieSales = []){
+  function CookieStand(id, location, minCustomersPerHour, maxCustomersPerHour, avgCookiesPerSale){
   this.id = id;
   this.location = location;
   this.minCustomersPerHour = minCustomersPerHour;
   this.maxCustomersPerHour = maxCustomersPerHour;
   this.avgCookiesPerSale = avgCookiesPerSale;
-  this.cookieSales = cookieSales;
+  this.cookieSales = [];
   this.storeTotal = 0;
   }
 
@@ -132,31 +132,29 @@ function displayFooter(){
 }
 displayFooter();
 
+let myForm = document.getElementById('new-store-form')
+myForm.addEventListener("submit", submitHandler)
 
-  // for (let i = 0; i < timeSlots.length; i++) {
-  //   let hourlyCookieTotal = 0;
-  //   for(let j = 0; j <)
-    
+function submitHandler(event) {
+  event.preventDefault();
 
-
-
-// let tableElem = document.getElementById('table');
-// const row1 = document.createElement('th');
-// for (let i = 0; i < timeSlots.length; i++) { 
-//   tableElem.appendChild(row1);
-//   const timeElem = document.createElement('th');
-//   timeElem.textContent = timeSlots[i];
-//   row1.appendChild(timeElem);
-
-
-
-
-// const row2 = document.createElement('tr');
-// for (let i = 0; i < location.length; i++) { 
-//   tableElem.appendChild(row2);
-//   const locationElem = document.createElement('tr');
-//   locationElem.textContent = timeSlots[i];
-//   row2.appendChild(locationElem);
-// }
+  let id = event.target.storeName.value;
+  let minCustomersPerHour = event.target.minCustomers.value;
+  let maxCustomersPerHour = event.target.maxCustomers.value;
+  let avgCookiesPerSale = event.target.avgCookieSales.value;
+  let name = id + 'Stand'
+  let newStand = new CookieStand (id, name, minCustomersPerHour, maxCustomersPerHour, avgCookiesPerSale);
+  allStands.push(newStand);
+  const tableElem = document.getElementById('table');
+  tableElem.innerHTML = "";
+  renderHeaderRow();
+  newStand.calcCookiesEachHour();
+  newStand.simulateCookieSales();
 
 
+  for (let i = 0; i < allStands.length; i++) {
+    allStands[i].render();
+  }
+
+  displayFooter();
+}
