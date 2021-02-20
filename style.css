@@ -21,30 +21,42 @@ table {
     color: white;
   }
 
-  h1 {
-    color: #006605;
-    text-align: center;
-    font-size: 110px;
+  .salmonImage {
+    margin: 0 auto;
+    display: inline-block;
+ 
+
   }
 
-  /* body {
-    background-color:#9fd4ff; */
+.allContent {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+
+  h1 {
+    color: #010c9a;
+    text-align: center;
+    font-size: 110px;
+    /* margin-top: 200px; */
+  }
+
+  body {
+    background-color:#e1f0fc;
 
   }
 
   p {
-    color:#ffffff;
-    font-family:futura;
+    color:#666666;
+    font-family:Arial, Helvetica, sans-serif
     text-weight: bold;
   }
 
   p a {
-    color:#f2f2f2;
+    color:#666666;
   }
 
-  img {
-    float: left;
-  }
+ 
 
   h4 {
 color:rgb(84, 81, 102);
@@ -60,10 +72,13 @@ color:rgb(84, 81, 102);
     color:blue;
   }
 
-  .form {
-    display: flex;
-  }
+ 
 
   #new-store-form {
     padding: 100px;
   }
+
+  .storeInfo {
+    margin-left: 500px;
+  }
+
